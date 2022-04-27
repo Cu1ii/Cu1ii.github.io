@@ -3223,12 +3223,15 @@ li.categoryBar-list-item:nth-child(6) {
   background: url('https://s4.ax1x.com/2022/02/25/bEuEqK.jpg');
 }
 li.categoryBar-list-item:nth-child(7) {
-  background: #abcdef;
+  background: url('https://s4.ax1x.com/2022/02/25/bEuyZT.jpg');
 }
 li.categoryBar-list-item:nth-child(8) {
-  background: rgba(45,67,89,0.7);
+  background: #abcdef;
 }
 li.categoryBar-list-item:nth-child(9) {
+  background: rgba(45,67,89,0.7);
+}
+li.categoryBar-list-item:nth-child(10) {
   background: -webkit-linear-gradient(rgba(0, 0, 0, 0.4) 25%, rgba(200,16 , 16, 0) 100%);
   background: -moz-linear-gradient(rgba(0, 0, 0, 0.4) 25%, rgba(200,16 , 16, 0) 100%);
   background: -o-linear-gradient(rgba(0, 0, 0, 0.4) 25%, rgba(200,16 , 16, 0) 100%);
@@ -3251,6 +3254,9 @@ li.categoryBar-list-item:nth-child(5)>span::after {
   content: '设计模式' !important;
 }
 li.categoryBar-list-item:nth-child(6)>span::after {
+  content: 'MySQL' !important;
+}
+li.categoryBar-list-item:nth-child(7)>span::after {
   content: '计算机网络' !important;
 }
 li.categoryBar-list-item {
