@@ -3239,25 +3239,7 @@ li.categoryBar-list-item:nth-child(10) {
   background: linear-gradient(rgba(0, 0, 0, 0.4) 25%, rgba(200,16 , 16, 0) 100%);
 }
 li.categoryBar-list-item:nth-child(1)>span::after {
-  content: 'C++' !important;
-}
-li.categoryBar-list-item:nth-child(2)>span::after {
-  content: 'STL 源码' !important;
-}
-li.categoryBar-list-item:nth-child(3)>span::after {
-  content: 'ACM' !important;
-}
-li.categoryBar-list-item:nth-child(4)>span::after {
-  content: '生活' !important;
-}
-li.categoryBar-list-item:nth-child(5)>span::after {
-  content: '设计模式' !important;
-}
-li.categoryBar-list-item:nth-child(6)>span::after {
-  content: 'MySQL' !important;
-}
-li.categoryBar-list-item:nth-child(7)>span::after {
-  content: '计算机网络' !important;
+  content: !important;
 }
 li.categoryBar-list-item {
   width: 32.3% !important;
