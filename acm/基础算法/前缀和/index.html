@@ -218,11 +218,11 @@
 <p>思路是很清晰的, 不过我们下面遇到了两个问题:</p>
 <ol>
 <li><p>递推求 $sum_{i, j}$ 的过程:  $sum_{i, j} = sum_{i - 1, j} + sum_{i, j - 1} + a_{i, j}$ 如果不理解可以对着下面这个图理解一下</p>
-<p><img src="https://img-blog.csdn.net/20180921215152309?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0OTkwNzMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p><img src="https://s1.ax1x.com/2022/05/01/OCJm2n.gif" data-original="https://img-blog.csdn.net/20180921215152309?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0OTkwNzMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
 <p>由于添加了 $sum_{i - 1, j}, sum_{i, j - 1}$  故对于 $sum_{i - 1, j - 1}$ 重复添加了, 所以需要减去</p>
 </li>
 <li><p>我们如何通过 $sum$ 矩阵求出 $(x_1, y_1) - (x_2, y_2)$ 子矩阵的和</p>
-<p><img src="https://img-blog.csdn.net/20180922161308238?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0OTkwNzMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+<p><img src="https://s1.ax1x.com/2022/05/01/OCJm2n.gif" data-original="https://img-blog.csdn.net/20180922161308238?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM0OTkwNzMx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
 <p>根据类似的思考, 再根据图看一下, 可以发现答案为 $sum_{x_1, y_1} - sum_{x_1 - 1, y_2} - sum_{x_2, y_1 - 1} + sum_{x_1 - 1, y_1 - 1}$</p>
 </li>
 </ol>

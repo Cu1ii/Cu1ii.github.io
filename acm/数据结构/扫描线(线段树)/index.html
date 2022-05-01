@@ -209,9 +209,9 @@
 </ul>
 <p><strong>求矩形并的周长</strong><br> 这个问题其实类似求矩形面积并，但是要稍微抽象一些，求这类问题有两种方法，但由于蒟蒻只会一种，所以就只介绍一种…</p>
 <p>依旧是向求面积并时，标记入边和出边，遇到入边就给对应的范围 + 1，表示覆盖了一次，遇到出边就就给对应范围 -1 表示扫描线覆盖的这个区域覆盖次数 -1，在统计周长的时候，先按照横坐标进行一次扫描线，每一次统计加入该边后的覆盖长度与上一次覆盖长度差的绝对值，然后再按照纵坐标进行一次扫描线，即为答案，要注意，由于可能出现入边和出边重叠的情况，但是重叠的部分是不算周长的，这里对边进行排序的时候，遇到重叠情况，采取先加入边再加出边的策略。</p>
-<p>演示 计算与轴平行的矩形并的长度<br><img src="https://img-blog.csdnimg.cn/20210217202806879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NVQ1VDMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>演示 计算与轴平行的矩形并的长度<br><img src="https://s1.ax1x.com/2022/05/01/OCJm2n.gif" data-original="https://img-blog.csdnimg.cn/20210217202806879.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NVQ1VDMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>这个方法挺抽象的，我强行解释一下：<br> 对于每一次加入入边，那么覆盖的长度一定 &gt;= 上一次覆盖的长度，就说明变长的这一部分一定是之前未被覆盖的，也就是说其没有被前面的矩形并所完全包含进去</p>
-<p><img src="https://img-blog.csdnimg.cn/20210217204041365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NVQ1VDMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p><img src="https://s1.ax1x.com/2022/05/01/OCJm2n.gif" data-original="https://img-blog.csdnimg.cn/20210217204041365.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0NVQ1VDMQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <p>这里黄色表示新加入的入边，之前由于1,2号入边已经将新加入的入边覆盖过了，而且其对应的出边并没有在新加入的入边之前就被扫描到，所以事实上这条边是在这两个矩形并的内部，并不能对周长产生贡献，也可以换个说法，当加入一条入边时，覆盖的长度并没有变化，说明，这个入边的下面有至少一条入边将这个区域给覆盖了，而且上面至少也对应一条出边，等待着将这个区域取消覆盖状态，也就是说，新加入的入边至少处于一个矩形的内部，对周长是没有贡献的，出边也同理，每加入一条出边覆盖的长度 &lt;= 上一次的长度，如果等于上一次长度，说明这条出边也是没有对周长产生贡献的</p>
 <p>之前看到的一句话，总结的很好</p>
 <blockquote>

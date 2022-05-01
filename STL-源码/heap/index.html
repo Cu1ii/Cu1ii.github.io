@@ -202,9 +202,9 @@
 </li>
 <li><p><code>holeIndex</code> 作为的是要新数字的叶子节点位置 它可以是任意一个叶子节点, 正如它的名字一样 <strong>空洞下标</strong>  所以对于 <code>__push_heap</code> 函数要做的就是待这个空出的叶子节点的值确定之后 向上调整维护堆的性质即可, 但是在 <code>__push_heap_aux</code> 封装的过程中, 参数默认为<strong>该段序列的最后一个位置</strong>, 对应到满二叉树上即为<strong>最后一个叶子节点</strong> </p>
 <p>这里可以对照下面的图理解一下</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Hy8b3q"><img src="https://s4.ax1x.com/2022/02/14/Hy8b3q.png" alt="Hy8b3q.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Hy8b3q"><img src="https://s1.ax1x.com/2022/05/01/OCJm2n.gif" data-original="https://s4.ax1x.com/2022/02/14/Hy8b3q.png" alt="Hy8b3q.png"></a></p>
 <p>  当然也可以令其他叶子节点为空然后向上维护堆的性质 如下图</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Hy8qg0"><img src="https://s4.ax1x.com/2022/02/14/Hy8qg0.png" alt="Hy8qg0.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Hy8qg0"><img src="https://s1.ax1x.com/2022/05/01/OCJm2n.gif" data-original="https://s4.ax1x.com/2022/02/14/Hy8qg0.png" alt="Hy8qg0.png"></a></p>
 <p>所以 <code>__push_heap</code> 函数的本质就是在一个固定大小的堆里维护某一个叶子节点到堆顶节点的链去保证整个堆的性质</p>
 </li>
 </ul>
@@ -222,9 +222,9 @@
 </ul>
 <p>上面描述的比较绕, 具体可以看下面的图理解一下</p>
 <ul>
-<li><a target="_blank" rel="noopener" href="https://imgtu.com/i/Hy8LvV"><img src="https://s4.ax1x.com/2022/02/14/Hy8LvV.png" alt="Hy8LvV.png"></a>有一种特殊情况即为当空洞到达最后一个叶子节点的父节点时, 由于不能比较左右儿子的大小去选择使哪个节点为空, 所以只能选择左儿子为空</li>
+<li><a target="_blank" rel="noopener" href="https://imgtu.com/i/Hy8LvV"><img src="https://s1.ax1x.com/2022/05/01/OCJm2n.gif" data-original="https://s4.ax1x.com/2022/02/14/Hy8LvV.png" alt="Hy8LvV.png"></a>有一种特殊情况即为当空洞到达最后一个叶子节点的父节点时, 由于不能比较左右儿子的大小去选择使哪个节点为空, 所以只能选择左儿子为空</li>
 </ul>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Hy8HCn"><img src="https://s4.ax1x.com/2022/02/14/Hy8HCn.png" alt="Hy8HCn.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/Hy8HCn"><img src="https://s1.ax1x.com/2022/05/01/OCJm2n.gif" data-original="https://s4.ax1x.com/2022/02/14/Hy8HCn.png" alt="Hy8HCn.png"></a></p>
 <p>在调整完毕后, 调用 <code>__push_heap</code> 函数去把最后一个叶子节点的值放入之前被置空的叶子节点后进行调整使剩下的完全二叉树满足堆的性质</p>
 <ul>
 <li><p>结合上面的图可以发现, <strong>除去置空点为根的子树</strong> , 以<strong>置空点左右儿子为根的子树</strong>  均满足堆的性质</p>
